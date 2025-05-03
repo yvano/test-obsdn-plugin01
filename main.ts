@@ -68,7 +68,7 @@ export default class HelloWorldPlugin extends Plugin {
 
 		  /* */
 
-		  this.registerEvent(
+		  /* this.registerEvent(
 			this.app.workspace.on("editor-menu", (menu, editor, view) => {
 			  menu.addItem((item) => {
 				item
@@ -79,7 +79,7 @@ export default class HelloWorldPlugin extends Plugin {
 				  });
 			  });
 			})
-		  );
+		  ); */
 	}
 }
 
