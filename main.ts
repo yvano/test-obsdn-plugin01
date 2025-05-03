@@ -48,6 +48,38 @@ export default class HelloWorldPlugin extends Plugin {
 			  console.log(`You have selected: ${sel}`);
 			},
 		  });
+
+
+
+		  /**/
+
+		  this.registerEvent(
+			this.app.workspace.on('file-menu', (menu, file) => {
+			  menu.addItem((item) => {
+				item
+				  .setTitle('Print file path 👈')
+				  .setIcon('document')
+				  .onClick(async () => {
+					new Notice(file.path);
+				  });
+			  });
+			})
+		  );
+
+		  /* */
+
+		  this.registerEvent(
+			this.app.workspace.on("editor-menu", (menu, editor, view) => {
+			  menu.addItem((item) => {
+				item
+				  .setTitle('Print file path 👈')
+				  .setIcon('document')
+				  .onClick(async () => {
+					new Notice(view.file.path);
+				  });
+			  });
+			})
+		  );
 	}
 }
 
